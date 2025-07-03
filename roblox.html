@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Roblox Model Store</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      background: #0f172a;
+      color: #e0e7ff;
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 40px 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+    }
+    h1 {
+      margin-bottom: 40px;
+      font-size: 2.5rem;
+      color: #facc15;
+      text-shadow: 0 0 10px #fbbf24;
+    }
+    .container {
+      max-width: 900px;
+      width: 100%;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 24px;
+    }
+    .model-card {
+      background: #1e293b;
+      border-radius: 16px;
+      padding: 24px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      position: relative;
+    }
+    .model-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 8px 24px rgba(252, 211, 77, 0.6);
+    }
+    .model-card h2 {
+      margin: 0 0 12px 0;
+      font-size: 1.5rem;
+      color: #fde68a;
+    }
+    .short-desc {
+      color: #cbd5e1;
+    }
+    .expand-button {
+      margin-top: 12px;
+      background: #0284c7;
+      color: white;
+      border: none;
+      padding: 10px 16px;
+      border-radius: 8px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    .expand-button:hover {
+      background: #0ea5e9;
+    }
+    .description {
+      margin-top: 16px;
+      display: none;
+      color: #dbeafe;
+      font-size: 0.95rem;
+      line-height: 1.5;
+    }
+    .description.show {
+      display: block;
+    }
+    .buy-button {
+      background: #fbbf24;
+      border: none;
+      padding: 12px 20px;
+      font-weight: 600;
+      font-size: 1rem;
+      border-radius: 12px;
+      cursor: pointer;
+      color: #1e293b;
+      box-shadow: 0 4px 8px rgba(251, 191, 36, 0.6);
+      transition: background 0.3s ease;
+      margin: 16px 0;
+      width: 100%;
+    }
+    .buy-button:hover {
+      background: #fcd34d;
+    }
+    form {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+    input[type="text"] {
+      flex-grow: 1;
+      min-width: 150px;
+      padding: 10px 14px;
+      border-radius: 10px;
+      border: none;
+      font-size: 1rem;
+      color: #1e293b;
+    }
+    input[type="submit"] {
+      background: #4ade80;
+      color: #065f46;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 10px;
+      font-weight: 700;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+    input[type="submit"]:hover {
+      background: #86efac;
+    }
+
+    @media (max-width: 480px) {
+      form {
+        flex-direction: column;
+        align-items: stretch;
+      }
+      .buy-button, input[type="text"], input[type="submit"], .expand-button {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🛒 WorkWorkWorkDude's Roblox Model Store</h1>
+
+  <div class="container">
+
+    <!-- Model Card 1 -->
+    <div class="model-card">
+      <h2>🟢 Basic Admin panel</h2>
+      <p class="short-desc">Simple Admin Panel. Click to read more.</p>
+      <button class="expand-button" onclick="toggleDescription(this)">Click for Description</button>
+      <div class="description">
+        <p>A lightweight and easy-to-use admin panel perfect for small games and beginner developers!
+No need to build your own GUI — this simple tool gives you quick control over your server.
+
+✨ Features:
+
+✅ Kick & Ban players
+
+✅ Teleport players
+
+✅ Give tools/items
+
+✅ View basic player info
+
+✅ Works in any game
+
+✅ One-script setup — no hassle!
+
+🔒 Secure Access: Only you or your whitelisted users can use the commands.
+
+Great for roleplay games, hangouts, or testing environments.
+No refunds – make sure your username is added correctly!</p>
+      </div>
+      <a href="https://www.roblox.com/game-pass/1295972877/BASIC-ADMIN-PANEL" target="_blank">
+        <button class="buy-button">Buy for 75 Robux</button>
+      </a>
+      <form onsubmit="handleForm(event, 'Gamepass Door System')">
+        <input type="text" placeholder="Enter your Roblox username" required />
+        <input type="submit" value="Submit Username" />
+      </form>
+    </div>
+
+    <!-- Model Card 2 -->
+    <div class="model-card">
+      <h2>🐶 Basic Pet System</h2>
+      <p class="short-desc">Starter pet follow system. Click to read more.</p>
+      <button class="expand-button" onclick="toggleDescription(this)">Click for Description</button>
+      <div class="description">
+        <p>The Basic Pet System includes everything to start a pet-based game: follow AI, pet icons, equipping, unequipping, and pet inventory UI. Add your own pets easily, supports currency unlocks, and comes fully commented for learning!</p>
+      </div>
+      <a href="https://www.roblox.com/game-pass-link-here" target="_blank">
+        <button class="buy-button">Buy for 40 Robux</button>
+      </a>
+      <form onsubmit="handleForm(event, 'Pet System')">
+        <input type="text" placeholder="Enter your Roblox username" required />
+        <input type="submit" value="Submit Username" />
+      </form>
+    </div>
+
+  </div>
+
+  <!-- Firebase -->
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+    import { getDatabase, ref, push } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyAUVaJ9MPlByd9fPVzvi--Rn1iSP1c2SWc",
+      authDomain: "robloxstore-80241.firebaseapp.com",
+      projectId: "robloxstore-80241",
+      storageBucket: "robloxstore-80241.appspot.com",
+      messagingSenderId: "333790044932",
+      appId: "1:333790044932:web:9c2f9e436669ab3bf7e651",
+      databaseURL: "https://robloxstore-80241-default-rtdb.firebaseio.com"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const database = getDatabase(app);
+
+    window.handleForm = (event, modelName) => {
+      event.preventDefault();
+      const username = event.target.querySelector("input[type='text']").value.trim();
+
+      if (!username) {
+        alert("Please enter your Roblox username.");
+        return;
+      }
+
+      push(ref(database, "submissions/"), {
+        username: username,
+        model: modelName,
+        time: new Date().toISOString()
+      })
+      .then(() => {
+        alert(
+          `Thanks, ${username}!\n\n` +
+          `If the Gamepass is purchased, you will receive your model shortly. In roblox studio. \n` +
+          `⚠️ There are no refunds. Make sure your username is entered correctly.`
+        );
+        event.target.reset();
+      })
+      .catch((error) => {
+        alert("Error saving data: " + error.message);
+      });
+    };
+
+    // Expand/collapse description
+    window.toggleDescription = (btn) => {
+      const desc = btn.nextElementSibling;
+      desc.classList.toggle("show");
+      btn.textContent = desc.classList.contains("show") ? "Hide Description" : "Click for Description";
+    };
+  </script>
+
+</body>
+</html>
